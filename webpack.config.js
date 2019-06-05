@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 const devMode = process.env.NODE_ENV !== 'production';
+
 module.exports = {
     entry: './src/js/app.js',
     output: {
@@ -31,11 +32,25 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader:'file-loader',
+                        options: {
+                            name:'[name].[ext]'
+                        }
+                    }
+                ],
+                exclude: path.resolve(__dirname, 'index.html')
             }
         ]
     },
     plugins: [
         new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css',
           }),
         new webpack.LoaderOptionsPlugin({
             options:{
