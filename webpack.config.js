@@ -1,15 +1,16 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry:  './src/js/app.js',
     output: {
         path: path.resolve(__dirname,'build'),
         filename: 'bundle.js',
-        publicPath: '/build'
+        // publicPath: '/build'
     },
     module:{
         rules: [
@@ -43,11 +44,15 @@ module.exports = {
                         }
                     }
                 ],
-                exclude: path.resolve(__dirname, 'index.html')
+                exclude: path.resolve(__dirname, 'src/index.html')
             }
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html'
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css',
@@ -59,5 +64,6 @@ module.exports = {
                 ]
             }
         })
+        
     ]
 }
