@@ -1,8 +1,5 @@
 @charset 'UTF-8';
-@import '1-helpers/1-helpers';
-@import '2-vendors/2-vendors';
-@import '3-base/3-base';
-@import '4-layout/4-layout';
-@import '5-components/5-components';
-@import '6-templates/6-templates';
-@import 'themes/default';
+@import 'variables';
+@import 'layout/layout';
+@import 'components/components';
+@import 'templates/templates';
