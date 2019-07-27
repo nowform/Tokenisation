@@ -1,3 +1,438 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the Tokenisation landing page.
 // -----------------------------------------------------------------------------
+.hidden{
+    display: none;
+}
+.disabled{
+    pointer-events: none;
+}
+.gray{
+    color: #8a8a96;
+
+    .tkn-range-slider{
+        .noUi-base{
+            .noUi-connects{
+                .noUi-connect{
+                    background-color: #8a8a96;
+                    
+                }
+            }
+        }
+    }
+}
+.tkn-range-slider{
+    &.noUi-horizontal{
+        height: 9px;
+        border: none;
+    }
+    &.noUi-connect{
+        background: #00b1f2;
+    }
+    .noUi-base{
+        .noUi-connects{
+            .noUi-connect:first-child{
+                background-color: #d5d5ea;
+                
+            }
+        }
+        .noUi-origin{
+            .noUi-handle{
+                &.noUi-handle-lower{
+                    height: 1px;
+                    width: 1px;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+.tkn-body-wrapper{
+   .tkn-cards-screens{
+        .tkn-card-header{
+            height: 60px;
+        }
+        .tkn-card-limit-title{
+            height: 86px;
+            background-color: #f2f7fd;
+            
+
+        .title-section {
+            position: relative;
+            width: 100%;
+            text-align: center;
+                .back-button{
+                    position: absolute;
+                    left: 20px;
+                    width: 10px;
+                    transform: rotate(180deg);
+                    cursor: pointer;
+                }
+        }
+        }
+        .tkn-card-selection{
+            margin-top: 60px;
+
+            /* &.hidden{
+                display: none;
+            } */
+
+            .select-card-title{
+                font-size: 17px;
+                text-align: center;
+            }
+            .cards{
+                margin-top: 80px;
+                .card{
+                    position: relative;
+                    cursor: pointer;
+                    max-width: 380px;
+                    margin: auto;
+
+                    .card-image{
+                        max-width: 380px;
+                        width: 100%;
+                    }
+                    //.card-content{
+                        /* position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding: 18px 35px 14px;
+                        height: 235px; */
+
+                        .card-selector{
+                            position: absolute;
+                            top: 18px;
+                            left: 25px;
+                            height: 33px;
+                            img{
+                                width: 33px;
+                            }
+                        }
+                        .card-number{
+                            //margin-top: 20px;
+                            position: absolute;
+                            top: 71px;
+                            left: 25px;
+                            right: 24px;
+                            font-size: 21px;
+                            color: #ffffff;
+                        }
+                        .card-details-headings{
+                            //margin-top: 86px;
+                            position: absolute;
+                            bottom: 38px;
+                            left: 25px;
+                            right: 24px;
+                            font-size: 10px;
+                            color: #dbdbdb;
+                        }
+                        .card-details{
+                            position: absolute;
+                            bottom: 14px;
+                            left: 25px;
+                            right: 24px;
+                            //margin-top: 9px;
+                            color: #ffffff;
+                        }
+                    //}
+                    
+                }
+            }
+        }
+        .tkn-after-card-selection{
+            padding-top: 40px;
+            padding-bottom: 58px;
+            background-color: #f5f5f5;
+
+           /*  &.hidden{
+                display: none;
+            } */
+
+            .tkn-card-selection-container{
+                padding: 0 calc(8.3333% - 20px);
+                .my-limits{
+                    margin-top: 20px;
+        
+                    .title-bar{
+                        height: 60px;
+                        display: flex;
+                        background: #f2f7fd;
+                        align-items: center;
+                        position: relative;
+                        width: 100%;
+                        padding-left: 21px;
+                        img{
+                            right: 0;
+                            height: 88px;
+                            position: absolute;
+                            bottom: 0;
+                        }
+                    }
+                }
+                .limit-content{
+                    background-color: #ffffff;
+                    padding: 20px 0;
+                    .section{
+                        padding: 0 20px;
+                        .amount{
+                            font-size: 18px;
+                            font-weight: bold;
+                        }
+                        .rupee{
+                            width: 9px;
+                        }
+                        .utilization{
+                            font-size: 16px;
+                        }
+                        .pin-based{
+                            .left{
+                                width: 280px;
+                                border-right: 1px solid #f2f2fd;
+                            }
+                            .right{
+                                margin-left: 99px;
+                                width: 280px;
+                            }
+                        }
+                    }
+                }
+                .subtext{
+                    padding: 0 20px;
+                    color: #a8a8a8;
+                }
+            }
+        }
+   }
+   .tkn-manage-limits-screen{
+       //background-color: #f5f5f5;
+       .tkn-manage-limits-header{
+           padding-top: 40px;
+           padding-bottom: 60px;
+           align-items: flex-start;
+           .back-button{
+                margin-left: 60px;
+                width: 10px;
+                transform: rotate(180deg);
+                cursor: pointer;
+            }
+           
+           .sbi-wrapper{
+               text-align: center;
+                .main-text{
+
+                }
+                .sub-text{
+                    margin-top: 13px;
+                }
+           }
+       }
+       .tkn-spends-section{
+           .tabs-header{
+               
+               .tabs{
+                padding: 0 80px;
+                    .tab{
+                        padding: 20px 0px;
+                        width: 123px;
+                        font-size: 16px;
+                        color: #8a8a96;
+                        font-weight: 400;
+                        margin-right: 60px;
+                        cursor: pointer;
+                        text-align: center;
+
+                        &:hover{
+                            color: #00b1f2;
+                            font-weight: 600;
+                            border-bottom: 2px solid #00b1f2;
+                        }
+
+                        &.active{
+                            color: #00b1f2;
+                            font-weight: 600;
+                            border-bottom: 2px solid #00b1f2;
+                        }
+                    }
+               }
+           }
+           .tabs-body{
+                background-color: #f5f5f5;
+                padding: 40px 0px;
+                .sbi-wrapper{
+                    .content-wrapper{
+                        padding: 0 80px;
+                        .tab-content{
+                            //position: relative;
+                            
+                            .content{
+                                
+                                display: none;
+                                /* opacity: 0;
+                                transform: translateX(100%);
+                                transition: transform 0.3s; */
+
+                                &.active{
+                                    display: block; 
+                                    /* z-index: 2;
+                                    opacity: 1;
+                                    transform: translateX(0);
+                                    transition: transform 0.3s; */
+                                }
+
+                                section{
+                                    background-color: #ffffff;
+                                    padding: 26px 0;
+
+                                    .switch{
+                                        position: relative;
+                                        display: inline-block;
+                                        width: 60px;
+                                        height: 30px;
+
+                                        input{ 
+                                            opacity: 0;
+                                            width: 0;
+                                            height: 0;
+
+                                            &:checked + .slider {
+                                                background-color: #00b1f2;
+                                            }
+                                             /* &:focus + .slider {
+                                                box-shadow: 0 0 1px #000000;
+                                            } */
+                                            &:checked + .slider:before {
+                                                -ms-transform: translateX(26px);
+                                                transform: translateX(26px);
+                                            }
+                                          }
+                                        .slider{
+                                            position: absolute;
+                                            cursor: pointer;
+                                            top: 0;
+                                            left: 0;
+                                            right: 0;
+                                            bottom: 0;
+                                            background-color: #ccc;
+                                            -webkit-transition: .4s;
+                                            transition: .4s;
+                                            border-radius: 30px;
+
+                                            &:before{
+                                                position: absolute;
+                                                content: "";
+                                                height: 34px;
+                                                width: 34px;
+                                                left: 0px;
+                                                bottom: -2px;
+                                                background-color: white;
+                                                -webkit-transition: .4s;
+                                                transition: .4s;
+                                                border-radius: 50%;
+                                                box-shadow: 0 0 1px #a8a8a8;
+                                            }
+                                        }
+                                          
+                                    }
+                                    .toggle-section{
+                                        padding: 0 20px;
+
+                                        .sub-text{
+                                            color: #a8a8a8;
+                                        }
+                                        .set-limit{
+                                            .input-label{
+                                                width: 301px;
+                                                .info{
+                                                    margin-left: 5px;
+                                                    font-size: 10px;
+                                                    color: #a8a8a8;
+                                                }
+                                            }
+                                            .limit{
+                                                margin-left: 61px;
+                                                .rupee{
+                                                    width: 8px;
+                                                    height: 19px;
+                                                }
+                                                .value{
+                                                    width: 100px;
+                                                    margin-left: 10px;
+                                                    text-align: right;
+                                                    input[type="text"]{
+                                                        height: 32px;
+                                                        width: 100%;
+                                                        text-align: right;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .limit-slider{
+                                            margin-bottom: 40px;
+                                        }
+
+                                        &.limit-count{
+                                           .set-limit{
+                                               .limit{
+                                                   .value{
+                                                       margin-left: 18px;
+                                                       input[type="text"]{
+                                                        height: 32px;
+                                                        width: 80%;
+                                                        text-align: right;
+                                                    }
+                                                   }
+                                               }
+                                           } 
+                                        }
+                                    } 
+                                }
+                                .disclaimer{
+                                    padding: 0 20px;
+                                    span{
+                                        color: #a8a8a8;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+           }
+       }
+   }
+   .tkn-changes-applied{
+        .tkn-card-header{
+            height: 60px;
+        }
+        .tkn-title-bar{
+            height: 156px;
+            background-color: #f2f7fd;
+            align-items: flex-end;
+            justify-content: center;
+            .img-container{
+                background-color: rgba(230, 47, 47, 0.37);
+                
+                img{
+                    width: 182px;
+                    opacity: 0.8;
+                    vertical-align: bottom;
+                }
+            }
+        }
+        .success-message{
+            margin: 60px auto 0 auto;
+            padding: 0 30px;
+            max-width: 780px;
+            div{
+                font-size: 16px;
+                a{
+                    font-size: 16px;
+                }
+            }
+            button{
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+   }
+}
