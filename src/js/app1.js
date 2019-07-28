@@ -26,18 +26,26 @@ function goToScreen(screen) {
         prevScreen = getElement('#manage-limits-screen');
         nextScreen = getElement('#applied-changes-screen');
     }
+    else if (screen === 'exit-without-save-screen') {
+        prevScreen = getElement('#manage-limits-screen');
+        nextScreen = getElement('#exit-without-save-screen');
+    }
+    else if (screen === 'applied-changes-screen-from-exit') {
+        prevScreen = getElement('#exit-without-save-screen');
+        nextScreen = getElement('#applied-changes-screen');
+    }
     prevScreen.classList.add('hidden');
     nextScreen.classList.remove('hidden');
 }
-function switchTab(event, tabID) {
-    const tabs = document.querySelectorAll('.tab-content .content'), tabLinks = document.querySelectorAll('.tabs-header .tabs .tab');
+function switchTab(event, tabID, device) {
+    const tabs = document.querySelectorAll(`.tkn-manage-limits-screen .${device} .tab-content .content`), tabLinks = document.querySelectorAll(`.tkn-manage-limits-screen .${device} .tabs-header .tabs .tab`);
     tabs.forEach(element => {
         element.classList.remove('active')
     });
     tabLinks.forEach(element => {
         element.classList.remove('active')
     });
-    const tabToActive = '#' + tabID;
+    const tabToActive = `.tkn-manage-limits-screen .${device} #${tabID}`;
     getElement(tabToActive).classList.add('active');
     event.currentTarget.className += ' active';
 }

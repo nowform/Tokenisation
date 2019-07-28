@@ -205,13 +205,50 @@
         }
    }
    .tkn-manage-limits-screen{
+       &{
+           /* For Mobile screens*/
+           .sm-visible{
+                .tkn-manage-limits-header{
+                    .back-button{
+                        left: 20px
+                    }
+                }
+                .tkn-spends-section{
+                    .tabs-header{
+                        border-bottom: 1px solid #f2f2fd;
+                        .tabs{
+                            padding: 0;
+                            .tab:not(:first-child){
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                    .tabs-body{
+                        padding: 0;
+                        .content-wrapper{
+                            padding: 0;
+
+                            .sbi-button-group{
+                                padding: 0 20px;
+                                .sbi-link{
+                                    margin-top: 40px;
+                                }
+                            }
+                        }
+                    }
+                }
+           }
+       }
        //background-color: #f5f5f5;
        .tkn-manage-limits-header{
            padding-top: 40px;
            padding-bottom: 60px;
            align-items: flex-start;
+           position: relative;
            .back-button{
-                margin-left: 60px;
+               position: absolute;
+               left: 60px;
+                //margin-left: 60px;
                 width: 10px;
                 transform: rotate(180deg);
                 cursor: pointer;
@@ -259,7 +296,7 @@
            .tabs-body{
                 background-color: #f5f5f5;
                 padding: 40px 0px;
-                .sbi-wrapper{
+                //.sbi-wrapper{
                     .content-wrapper{
                         padding: 0 80px;
                         .tab-content{
@@ -396,7 +433,7 @@
                             }
                         }
                     }
-                }
+                //}
            }
        }
    }
@@ -434,5 +471,26 @@
                 font-weight: normal;
             }
         }
+   }
+   .tkn-exit-without-save-screen{
+       padding: 60px 20px 0;
+
+       .head-image{
+        text-align: center;
+
+       }
+       .content{
+        text-align: center;
+           .content-heading{
+               font-size: 20px;
+               font-weight: bold;
+           }
+       }
+       .sbi-button-group{
+           margin-top: 60px;
+           a{
+               margin-top: 40px;
+           }
+       }
    }
 }
