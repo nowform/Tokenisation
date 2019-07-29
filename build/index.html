@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tokenisation</title>
+    <link rel="stylesheet" href="https://jatinkukreja18.github.io/SBI-Theme/main.css" />
+    <!-- <link rel="stylesheet" href="/build/main.css"/> -->
+    <link href="src/stylesheets/vendor/nouislider.css" rel="stylesheet">
+    <script src="src/js/vendor/nouislider.js" type="text/javascript"></script>
+    <script src="bundle.js"></script>
+
+<link href="main.css" rel="stylesheet"></head>
+
+<body>
+    <div class="tkn-body-wrapper">
+        <div id="cards-screen" class="tkn-cards-screens hidden">
+            <header class="sbi-wrapper tkn-card-header flex flex-ac flex-sb">
+                <img src="./assets/images/sbi_card_logo_2x.jpg" alt="" style="height: 21px;" />
+                <a href="#myDashboard" class="" style="line-height: 20px;">My Dashboard</a>
+            </header>
+            <section class="tkn-card-limit-title flex flex-ac">
+                <div class="title-section sbi-wrapper sbi-heading">
+                    <span class="back-button" onclick="goToScreen('cards-list')">
+                        <img src="./assets/images/chevron.png" />
+                    </span>
+                    <span>Card and Wallet Limits</span>
+                </div>
+            </section>
+            <section class="tkn-card-selection sbi-wrapper" id="cards-list">
+                <div class="select-card-title sbi-text gray">
+                    <span>Please select a card to continue</span>
+                </div>
+                <div class="cards row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card" onclick="selectCard(event)">
+                            <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                            <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                            <!-- <div class="card-content full-width"> -->
+                            <div class="card-selector">
+                                <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
+                            </div>
+                            <div class="card-number flex flex-sb">
+                                <div>8810</div>
+                                <div>6327</div>
+                                <div>9900</div>
+                                <div>6754</div>
+                            </div>
+                            <div class="card-details-headings flex flex-sb">
+                                <span>CARD HOLDER</span>
+                                <span>VALID THRU</span>
+                            </div>
+                            <div class="card-details sbi-text flex flex-sb">
+                                <span>SUBAHLAKSHMI CHANDRA</span>
+                                <span>12/24</span>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class=" card" onclick="selectCard(event)">
+                            <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                            <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                            <div class="card-content full-width">
+                                <div class="card-selector">
+                                    <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
+                                </div>
+                                <div class="card-number flex flex-sb">
+                                    <div>8810</div>
+                                    <div>6327</div>
+                                    <div>9900</div>
+                                    <div>6754</div>
+                                </div>
+                                <div class="card-details-headings flex flex-sb">
+                                    <span>CARD HOLDER</span>
+                                    <span>VALID THRU</span>
+                                </div>
+                                <div class="card-details sbi-text flex flex-sb">
+                                    <span>SUBAHLAKSHMI CHANDRA</span>
+                                    <span>12/24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class=" card" onclick="selectCard(event)">
+                            <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                            <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                            <div class="card-content full-width">
+                                <div class="card-selector">
+                                    <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
+                                </div>
+                                <div class="card-number flex flex-sb">
+                                    <div>8810</div>
+                                    <div>6327</div>
+                                    <div>9900</div>
+                                    <div>6754</div>
+                                </div>
+                                <div class="card-details-headings flex flex-sb">
+                                    <span>CARD HOLDER</span>
+                                    <span>VALID THRU</span>
+                                </div>
+                                <div class="card-details sbi-text flex flex-sb">
+                                    <span>SUBAHLAKSHMI CHANDRA</span>
+                                    <span>12/24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="tkn-after-card-selection hidden" id="card-limits">
+                <div class="sbi-wrapper">
+                    <div class="tkn-card-selection-container">
+                        <div class="card-selection-dropdown"></div>
+                        <div class="my-limits">
+                            <div class="title-bar">
+                                <span>My Limits</span>
+                                <img src="./assets/images/my_limits_header.png" />
+                            </div>
+                        </div>
+                        <div class="limit-content">
+                            <div class="section">
+                                <div class="sbi-text">
+                                    <span>Your international spend limit is currently set at</span>
+                                </div>
+                                <div class="amount space-top-10">
+                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                    <span>1,75,000</span>
+                                </div>
+                                <div class="space-top-10 sbi-text">
+                                    <span class="">Utilized this month: </span>
+                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                    <span class="utilization">50,000</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="section">
+                                <div class="sbi-text">
+                                    <span>Your online limit is currently set at</span>
+                                </div>
+                                <div class="amount space-top-10">
+                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                    <span>2,000</span>
+                                </div>
+                                <div class="space-top-10 sbi-text">
+                                    <span class="">Utilized this month: </span>
+                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                    <span class="utilization">50,000</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="section">
+                                <div class="sbi-text">
+                                    <span>Per transaction limits for contactless spends are set at</span>
+                                </div>
+                                <div class="flex space-top-10 pin-based sbi-text">
+                                    <div class=" left border">
+                                        <div>
+                                            <span>Non PIN Based Spends</span>
+                                        </div>
+                                        <div class="amount space-top-10">
+                                            <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                            <span>2,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div>
+                                            <span>PIN Based Spends</span>
+                                        </div>
+                                        <div class="amount space-top-10">
+                                            <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                            <span>2,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="space-top-40 sbi-button primary"
+                                    onclick="goToScreen('manage-limits')">Manage my limits</button>
+                            </div>
+                        </div>
+                        <div class="subtext sbi-text space-top-10">
+                            <span>Set individual limits for your Card transactions (ATM and Online) and Contactless
+                                transactions (PIN and Non-PIN based)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="manage-limits-screen" class="tkn-manage-limits-screen ">
+            <div class="sm-hidden desktop">
+                <header class="tkn-manage-limits-header flex flex-as">
+                    <span class="back-button" onclick="goToScreen('cards-screen')">
+                        <img src="./assets/images/chevron.png" />
+                    </span>
+                    <div class="sbi-wrapper">
+                        <div class="main-text sbi-heading">
+                            <span>Manage Limits</span>
+                        </div>
+                        <div class="sub-text sbi-text gray">
+                            <span>For card ending in 1234 </span>
+                        </div>
+                    </div>
+                </header>
+                <div class="tkn-spends-section">
+                    <div class="tabs-header sbi-wrapper">
+                        <div class="tabs flex">
+                            <div class="tab active" onclick="switchTab(event, 'card-spends', 'desktop')">
+                                <span>Card Spends</span>
+                            </div>
+                            <div class="tab" onclick="switchTab(event, 'digital-spends', 'desktop')">
+                                <span>Digital Spends</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-body">
+                        <div class="sbi-wrapper">
+                            <div class="content-wrapper">
+                                <div class="tab-content">
+                                    <div id="card-spends" class="content cards active">
+                                        <section class="all-international sbi-text">
+                                            <div class="toggle-section master">
+                                                <div class="flex flex-sb">
+                                                    <span class="sbi-subheading">All international transactions</span>
+                                                    <label class="switch">
+                                                        <input id="master-international" type="checkbox"
+                                                            onclick="onChangeCardMaster('all-international')"
+                                                            onchange="enableApplyButton();changeNonPinCountLimit(event)"
+                                                            class="master-toggle">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                                <div class=" sub-text">
+                                                    <span>Includes international subscription platforms like Netflix,
+                                                        Spotify, and Apple Music. </span>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section slave atm-international flex flex-sb">
+                                                <span class="">International ATM transactions</span>
+                                                <label class="switch">
+                                                    <input id="atm-international" type="checkbox" class="slave-toggle"
+                                                        onclick="onChangeSlave(event, 'atm-international')"
+                                                        onchange="enableApplyButton()">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </section>
+                                        <section class="all-online space-top-10 sbi-text">
+                                            <div class="toggle-section master">
+                                                <div class="flex flex-sb">
+                                                    <span class="sbi-subheading">All online transactions</span>
+                                                    <label class="switch">
+                                                        <input id="master-online" type="checkbox"
+                                                            onclick="onChangeCardMaster('all-online')"
+                                                            onchange="enableApplyButton()" class="master-toggle">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                                <div class=" sub-text">
+                                                    <span>Includes all international and domestic online transactions
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section slave domestic-online flex flex-sb">
+                                                <span class="">Domestic transactions</span>
+                                                <label class="switch">
+                                                    <input id="domestic-online" type="checkbox" class="slave-toggle"
+                                                        onclick="onChangeSlave(event, 'domestic-online')"
+                                                        onchange="enableApplyButton()">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section slave international-online flex flex-sb">
+                                                <span class="">International transactions</span>
+                                                <label class="switch">
+                                                    <input id="international-online" type="checkbox"
+                                                        class="slave-toggle"
+                                                        onclick="onChangeSlave(event, 'international-online')"
+                                                        onchange="enableApplyButton()">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </section>
+                                        <div class="sbi-button-group vertical-sm space-top-40">
+                                            <button class="apply-digital sbi-button primary"
+                                                onclick="goToScreen('applied-changes-screen')" disabled="disabled">Apply
+                                                Changes</button>
+                                            <a class="sbi-link underlined"
+                                                onclick="openExitWithoutSaveModal()">Cancel</a>
+                                        </div>
+                                    </div>
+                                    <form id="digital-spends" class="content digital"
+                                        onsubmit="goToScreen('applied-changes-screen')">
+                                        <section class="all-digital">
+                                            <div class="toggle-section">
+                                                <div class="flex "><span class="sbi-subheading">All Digital
+                                                        Spends</span></div>
+                                                <div class="sbi-text sub-text space-top-10">
+                                                    <span>Covers all PIN/OTP non PIN/OTP based international & domestic
+                                                        transactions on Samsung Pay and SBI
+                                                        Card Pay</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="all-online non-pin space-top-10 sbi-text">
+                                            <div class="toggle-section master">
+                                                <div class="flex flex-sb">
+                                                    <span class="">Non-PIN based Contactless Transactions</span>
+                                                    <label class="switch">
+                                                        <input id="master-non-pin" type="checkbox"
+                                                            onclick="onChangeDigitalMaster('non-pin')"
+                                                            onchange="enableApplyButton()" class="master-toggle">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section limit-amount">
+                                                <span class="">Single Transaction Limit</span>
+                                                <div class="flex space-top-40 set-limit current">
+                                                    <div class="input-label">
+                                                        <span>Current net limit:</span>
+                                                    </div>
+                                                    <div class="limit flex">
+                                                        <img class="rupee" src="./assets/images/rupee_symbol.png"
+                                                            alt="" />
+                                                        <div class="value">
+                                                            <span>2,50,000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-ac space-top-20 set-limit new">
+                                                    <div class="input-label">
+                                                        <span>Set new limit:</span>
+                                                    </div>
+                                                    <div class="limit flex flex-ac">
+                                                        <img class="rupee" src="./assets/images/rupee_symbol.png"
+                                                            alt="" />
+                                                        <div class="value">
+                                                            <input value="2,50,000" type="text" id="new-limit-1"
+                                                                onchange="enableApplyButton()"
+                                                                onkeypress="return isNumber(event)" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="limit-slider space-top-40">
+                                                    <div id="range-slider-1" class="tkn-range-slider"></div>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section limit-count">
+                                                <div class="flex space-top-40 set-limit current">
+                                                    <div class="input-label">
+                                                        <span>Current no. of transactions per day:</span>
+                                                    </div>
+                                                    <div class="limit flex">
+                                                        <div class="value">
+                                                            <span>5</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-ac space-top-20 set-limit new">
+                                                    <div class="input-label">
+                                                        <span>Set new count:</span>
+                                                        <span class="info">(Max: <span class="count">5</span>)</span>
+                                                    </div>
+                                                    <div class="limit flex flex-ac">
+                                                        <div class="value">
+                                                            <input value="3" type="text" onchange="enableApplyButton()"
+                                                                pattern="([0-9]|10)" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <div class="disclaimer space-top-10 sbi-text">
+                                            <span>Enabling international spends will affect your max limits for non-PIN
+                                                based Contactless POS transactions</span>
+                                        </div>
+
+                                        <section class="all-online pin space-top-20 sbi-text">
+                                            <div class="toggle-section master">
+                                                <div class="flex flex-sb">
+                                                    <span class="">PIN based Contactless Transactions</span>
+                                                    <label class="switch">
+                                                        <input id="master-pin" type="checkbox"
+                                                            onclick="onChangeDigitalMaster('pin')"
+                                                            onchange="enableApplyButton()" class="master-toggle">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section limit-amount">
+                                                <span class="">Single Transaction Limit</span>
+                                                <div class="flex space-top-40 set-limit current">
+                                                    <div class="input-label">
+                                                        <span>Current net limit:</span>
+                                                    </div>
+                                                    <div class="limit flex">
+                                                        <img class="rupee" src="./assets/images/rupee_symbol.png"
+                                                            alt="" />
+                                                        <div class="value">
+                                                            <span>2,50,000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-ac space-top-20 set-limit new">
+                                                    <div class="input-label">
+                                                        <span>Set new limit:</span>
+                                                    </div>
+                                                    <div class="limit flex flex-ac">
+                                                        <img class="rupee" src="./assets/images/rupee_symbol.png"
+                                                            alt="" />
+                                                        <div class="value">
+                                                            <input value="2,50,000" type="text" id="new-limit-2"
+                                                                onchange="enableApplyButton()"
+                                                                onkeypress="return isNumber(event)" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="limit-slider space-top-40">
+                                                    <div id="range-slider-2" class="tkn-range-slider"></div>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section limit-count">
+                                                <div class="flex space-top-40 set-limit current">
+                                                    <div class="input-label">
+                                                        <span>Current no. of transactions per day:</span>
+                                                    </div>
+                                                    <div class="limit flex">
+                                                        <div class="value">
+                                                            <span>99</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-ac space-top-20 set-limit new">
+                                                    <div class="input-label">
+                                                        <span>Set new count:</span>
+                                                        <span class="info">(Max: 99)</span>
+                                                    </div>
+                                                    <div class="limit flex flex-ac">
+                                                        <div class="value">
+                                                            <input value=99 type="text" onchange="enableApplyButton()"
+                                                                pattern="([1-9]|[1-8][0-9]|9[0-9])" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <div class="sbi-button-group vertical-sm space-top-40">
+                                            <button disabled class="apply-digital sbi-button primary">Apply
+                                                Changes</button>
+                                            <a class="sbi-link underlined"
+                                                onclick="openExitWithoutSaveModal()">Cancel</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Exit without save Modal-->
+                        <div id="exitWithoutSave" class="modal " role="dialog">
+                            <div class="modal-body text-center noPadding">
+                                <div class="modal-padding-wrapper">
+                                    <div style="text-align: center">
+                                        <img src="./assets/images/changes_successful.png"
+                                            style="max-width:100%;width: 265px;" alt="">
+                                    </div>
+                                    <h2 class="modal-heading" style="font-size: 20px">You have unsaved changes</h2>
+                                    <div class="modal-content">
+                                        <p>Are you sure you want to exit without saving?</p>
+                                        <br>
+                                        <p>Choose “Apply changes” to update your card details.</p>
+                                        <p>Choose “Exit without saving” to discard your changes.</p>
+
+                                    </div>
+                                    <div class="flex flex-ac flex-jc flex-col space-top-40">
+                                        <button class="sbi-button primary full-xs button-modal-space"
+                                            onclick="goToScreen('applied-changes-screen')">
+                                            Apply Changes
+                                        </button>
+                                        <a onclick="goToScreen('cards-screen');window.location.hash=''"
+                                            class="underlined">Exit without saving</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-visible mobile">
+                <header class="tkn-manage-limits-header flex flex-as">
+                    <span class="back-button" onclick="goToScreen('cards-screen')">
+                        <img src="./assets/images/chevron.png" />
+                    </span>
+                    <div class="sbi-wrapper">
+                        <div class="main-text sbi-heading">
+                            <span>Manage Limits</span>
+                        </div>
+                        <div class="sub-text sbi-text gray">
+                            <span>For card ending in 1234 </span>
+                        </div>
+                    </div>
+                </header>
+                <div class="tkn-spends-section">
+                    <div class="tabs-header ">
+                        <div class="tabs flex flex-jc">
+                            <div class="tab active" onclick="switchTab(event, 'card-spends', 'mobile')">
+                                <span>Card Spends</span>
+                            </div>
+                            <div class="tab" onclick="switchTab(event, 'digital-spends', 'mobile')">
+                                <span>Digital Spends</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-body">
+                        <div class="">
+                            <div class="content-wrapper">
+                                <div class="tab-content">
+                                    <div id="card-spends" class="content cards active">
+                                        <section class="all-international sbi-text">
+                                            <div class="toggle-section master">
+                                                <div class="flex flex-sb">
+                                                    <span class="sbi-subheading">All international transactions</span>
+                                                    <label class="switch">
+                                                        <input id="master-international" type="checkbox"
+                                                            onclick="onChangeCardMaster('all-international')"
+                                                            onchange="enableApplyButton();changeNonPinCountLimit(event)"
+                                                            class="master-toggle">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                                <div class=" sub-text">
+                                                    <span>Includes international subscription platforms like Netflix,
+                                                        Spotify, and Apple Music. </span>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section slave atm-international flex flex-sb">
+                                                <span class="">International ATM transactions</span>
+                                                <label class="switch">
+                                                    <input id="atm-international" type="checkbox" class="slave-toggle"
+                                                        onclick="onChangeSlave(event, 'atm-international')"
+                                                        onchange="enableApplyButton()">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </section>
+                                        <section class="all-online space-top-10 sbi-text">
+                                            <div class="toggle-section master">
+                                                <div class="flex flex-sb">
+                                                    <span class="sbi-subheading">All online transactions</span>
+                                                    <label class="switch">
+                                                        <input id="master-online" type="checkbox"
+                                                            onclick="onChangeCardMaster('all-online')"
+                                                            onchange="enableApplyButton()" class="master-toggle">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                                <div class=" sub-text">
+                                                    <span>Includes all international and domestic online transactions
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section slave domestic-online flex flex-sb">
+                                                <span class="">Domestic transactions</span>
+                                                <label class="switch">
+                                                    <input id="domestic-online" type="checkbox" class="slave-toggle"
+                                                        onclick="onChangeSlave(event, 'domestic-online')"
+                                                        onchange="enableApplyButton()">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section slave international-online flex flex-sb">
+                                                <span class="">International transactions</span>
+                                                <label class="switch">
+                                                    <input id="international-online" type="checkbox"
+                                                        class="slave-toggle"
+                                                        onclick="onChangeSlave(event, 'international-online')"
+                                                        onchange="enableApplyButton()">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </section>
+                                        <div class="sbi-button-group vertical-sm space-top-40">
+                                            <button class="apply-digital sbi-button primary"
+                                                onclick="goToScreen('applied-changes-screen')" disabled="disabled">Apply
+                                                Changes</button>
+                                            <a class="sbi-link underlined"
+                                                onclick="goToScreen('exit-without-save-screen')">Cancel</a>
+                                        </div>
+                                    </div>
+                                    <form id="digital-spends" class="content digital"
+                                        onsubmit="goToScreen('applied-changes-screen')">
+                                        <section class="all-digital">
+                                            <div class="toggle-section">
+                                                <div class="flex "><span class="sbi-subheading">All Digital
+                                                        Spends</span></div>
+                                                <div class="sbi-text sub-text space-top-10">
+                                                    <span>Covers all PIN/OTP non PIN/OTP based international & domestic
+                                                        transactions on Samsung Pay and SBI
+                                                        Card Pay</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="all-online non-pin space-top-10 sbi-text">
+                                            <div class="toggle-section master">
+                                                <div class="flex flex-sb">
+                                                    <span class="">Non-PIN based Contactless Transactions</span>
+                                                    <label class="switch">
+                                                        <input id="master-non-pin" type="checkbox"
+                                                            onclick="onChangeDigitalMaster('non-pin')"
+                                                            onchange="enableApplyButton()" class="master-toggle">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section limit-amount">
+                                                <span class="">Single Transaction Limit</span>
+                                                <div class="flex space-top-40 set-limit current">
+                                                    <div class="input-label">
+                                                        <span>Current net limit:</span>
+                                                    </div>
+                                                    <div class="limit flex">
+                                                        <img class="rupee" src="./assets/images/rupee_symbol.png"
+                                                            alt="" />
+                                                        <div class="value">
+                                                            <span>2,50,000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-ac space-top-20 set-limit new">
+                                                    <div class="input-label">
+                                                        <span>Set new limit:</span>
+                                                    </div>
+                                                    <div class="limit flex flex-ac">
+                                                        <img class="rupee" src="./assets/images/rupee_symbol.png"
+                                                            alt="" />
+                                                        <div class="value">
+                                                            <input value="2,50,000" type="text" id="new-limit-1"
+                                                                onchange="enableApplyButton()"
+                                                                onkeypress="return isNumber(event)" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="limit-slider space-top-40">
+                                                    <div id="range-slider-1" class="tkn-range-slider"></div>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section limit-count">
+                                                <div class="flex space-top-40 set-limit current">
+                                                    <div class="input-label">
+                                                        <span>Current no. of transactions per day:</span>
+                                                    </div>
+                                                    <div class="limit flex">
+                                                        <div class="value">
+                                                            <span>5</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-ac space-top-20 set-limit new">
+                                                    <div class="input-label">
+                                                        <span>Set new count:</span>
+                                                        <span class="info">(Max: <span class="count">5</span>)</span>
+                                                    </div>
+                                                    <div class="limit flex flex-ac">
+                                                        <div class="value">
+                                                            <input value="3" type="text" onchange="enableApplyButton()"
+                                                                pattern="([0-9]|10)" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <div class="disclaimer space-top-10 sbi-text">
+                                            <span>Enabling international spends will affect your max limits for non-PIN
+                                                based Contactless POS transactions</span>
+                                        </div>
+
+                                        <section class="all-online pin space-top-20 sbi-text">
+                                            <div class="toggle-section master">
+                                                <div class="flex flex-sb">
+                                                    <span class="">PIN based Contactless Transactions</span>
+                                                    <label class="switch">
+                                                        <input id="master-pin" type="checkbox"
+                                                            onclick="onChangeDigitalMaster('pin')"
+                                                            onchange="enableApplyButton()" class="master-toggle">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section limit-amount">
+                                                <span class="">Single Transaction Limit</span>
+                                                <div class="flex space-top-40 set-limit current">
+                                                    <div class="input-label">
+                                                        <span>Current net limit:</span>
+                                                    </div>
+                                                    <div class="limit flex">
+                                                        <img class="rupee" src="./assets/images/rupee_symbol.png"
+                                                            alt="" />
+                                                        <div class="value">
+                                                            <span>2,50,000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-ac space-top-20 set-limit new">
+                                                    <div class="input-label">
+                                                        <span>Set new limit:</span>
+                                                    </div>
+                                                    <div class="limit flex flex-ac">
+                                                        <img class="rupee" src="./assets/images/rupee_symbol.png"
+                                                            alt="" />
+                                                        <div class="value">
+                                                            <input value="2,50,000" type="text" id="new-limit-2"
+                                                                onchange="enableApplyButton()"
+                                                                onkeypress="return isNumber(event)" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="limit-slider space-top-40">
+                                                    <div id="range-slider-2" class="tkn-range-slider"></div>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="toggle-section limit-count">
+                                                <div class="flex space-top-40 set-limit current">
+                                                    <div class="input-label">
+                                                        <span>Current no. of transactions per day:</span>
+                                                    </div>
+                                                    <div class="limit flex">
+                                                        <div class="value">
+                                                            <span>99</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-ac space-top-20 set-limit new">
+                                                    <div class="input-label">
+                                                        <span>Set new count:</span>
+                                                        <span class="info">(Max: 99)</span>
+                                                    </div>
+                                                    <div class="limit flex flex-ac">
+                                                        <div class="value">
+                                                            <input value=99 type="text" onchange="enableApplyButton()"
+                                                                pattern="([1-9]|[1-8][0-9]|9[0-9])" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <div class="sbi-button-group vertical-sm space-top-40">
+                                            <button disabled class="apply-digital sbi-button primary">
+                                                Apply Changes
+                                            </button>
+                                            <a class="sbi-link underlined" onclick="goToScreen('exit-without-save-screen')">Cancel</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="exit-without-save-screen" class="tkn-exit-without-save-screen hidden">
+            <div class="head-image">
+                <img src="./assets/images/changes_successful.png" style="max-width:100%;width: 274px;" alt="">
+            </div>
+            <div class="content space-top-40 sbi-text">
+                <div class="content-heading">You have unsaved changes</div>
+                <div class="space-top-40">Are you sure you want to exit without saving?</div>
+                <br>
+                <p>Choose “Apply changes” to update your card details.Choose “Exit without saving” to discard your changes.</p>
+            </div>
+            <div class="sbi-button-group vertical-sm">
+                <button class=" sbi-button primary" onclick="goToScreen('applied-changes-screen-from-exit')">
+                    Apply Changes
+                </button>
+                <a onclick="goToScreen('cards-screen')" class="underlined ">Cancel</a>
+            </div>
+        
+        </div>
+        <div id="applied-changes-screen" class="tkn-changes-applied hidden">
+            <header class="sbi-wrapper tkn-card-header flex flex-ac flex-sb">
+                <img src="./assets/images/sbi_card_logo_2x.jpg" alt="" style="height: 21px;" />
+                <a href="#myDashboard" class="" style="line-height: 20px;">My Dashboard</a>
+            </header>
+            <section class="tkn-title-bar flex">
+                <div class="img-container">
+                    <img src="./assets/images/changes_successful.png" />
+                </div>
+            </section>
+            <div class="success-message sbi-text">
+                <div>Congratulations! Lorem ipsum dolor sit amet conseecteur adipiscing.</div>
+                <div class="space-top-40 sbi-heading">Your Ineraction ID Number is 1234567890</div>
+                <div class="space-top-40">The service request number has been sent to your register mobile number
+                    xxxxxx0738 and
+                    email ID s******a@gmail.com.</div>
+                <div class="space-top-20">To track your request, <a class="sbi-link">click here</a></div>
+                <button class="space-top-40 sbi-button primary sm-hidden">Close</button>
+                <button class="space-top-40 sbi-button primary sm-visible full-xs">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="src/js/app1.js"></script>
+<script type="text/javascript" src="bundle.min.js"></script></body>
+
+</html>
