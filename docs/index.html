@@ -9,17 +9,21 @@
     <link rel="stylesheet" href="https://jatinkukreja18.github.io/SBI-Theme/main.css" />
     <!-- <link rel="stylesheet" href="/build/main.css"/> -->
     <link href="src/stylesheets/vendor/nouislider.css" rel="stylesheet">
+    <link href="src/stylesheets/vendor/slick.css" rel="stylesheet">
+    <link href="src/stylesheets/vendor/slick-theme.css" rel="stylesheet">
     <script src="src/js/vendor/nouislider.js" type="text/javascript"></script>
+    <script src="src/js/vendor/jquery.min.js" type="text/javascript"></script>
+    <script src="src/js/vendor/slick.min.js" type="text/javascript"></script>
     <script src="bundle.js"></script>
 
 <link href="main.css" rel="stylesheet"></head>
 
 <body>
     <div class="tkn-body-wrapper">
-        <div id="cards-screen" class="tkn-cards-screens hidden">
+        <div id="cards-screen" class="tkn-cards-screens ">
             <header class="sbi-wrapper tkn-card-header flex flex-ac flex-sb">
                 <img src="./assets/images/sbi_card_logo_2x.jpg" alt="" style="height: 21px;" />
-                <a href="#myDashboard" class="" style="line-height: 20px;">My Dashboard</a>
+                <a href="" class="" style="line-height: 20px;">My Dashboard</a>
             </header>
             <section class="tkn-card-limit-title flex flex-ac">
                 <div class="title-section sbi-wrapper sbi-heading">
@@ -30,12 +34,94 @@
                 </div>
             </section>
             <section class="tkn-card-selection sbi-wrapper" id="cards-list">
-                <div class="select-card-title sbi-text gray">
-                    <span>Please select a card to continue</span>
+                <div class="sm-hidden desktop">
+                    <div class="select-card-title sbi-text gray">
+                        <span>Please select a card to continue</span>
+                    </div>
+                    <div class="tkn-cards row">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="tkn-card" onclick="selectCard(event)">
+                                <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                                <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                                <!-- <div class="card-content full-width"> -->
+                                <div class="card-selector">
+                                    <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
+                                </div>
+                                <div class="card-number flex flex-sb">
+                                    <div>8810</div>
+                                    <div>6327</div>
+                                    <div>9900</div>
+                                    <div>6754</div>
+                                </div>
+                                <div class="card-details-headings flex flex-sb">
+                                    <span>CARD HOLDER</span>
+                                    <span>VALID THRU</span>
+                                </div>
+                                <div class="card-details sbi-text flex flex-sb">
+                                    <span>SUBAHLAKSHMI CHANDRA</span>
+                                    <span>12/24</span>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class=" tkn-card" onclick="selectCard(event)">
+                                <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                                <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                                <div class="card-content full-width">
+                                    <div class="card-selector">
+                                        <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
+                                    </div>
+                                    <div class="card-number flex flex-sb">
+                                        <div>8810</div>
+                                        <div>6327</div>
+                                        <div>9900</div>
+                                        <div>6754</div>
+                                    </div>
+                                    <div class="card-details-headings flex flex-sb">
+                                        <span>CARD HOLDER</span>
+                                        <span>VALID THRU</span>
+                                    </div>
+                                    <div class="card-details sbi-text flex flex-sb">
+                                        <span>SUBAHLAKSHMI CHANDRA</span>
+                                        <span>12/24</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class=" tkn-card" onclick="selectCard(event)">
+                                <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                                <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                                <div class="card-content full-width">
+                                    <div class="card-selector">
+                                        <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
+                                    </div>
+                                    <div class="card-number flex flex-sb">
+                                        <div>8810</div>
+                                        <div>6327</div>
+                                        <div>9900</div>
+                                        <div>6754</div>
+                                    </div>
+                                    <div class="card-details-headings flex flex-sb">
+                                        <span>CARD HOLDER</span>
+                                        <span>VALID THRU</span>
+                                    </div>
+                                    <div class="card-details sbi-text flex flex-sb">
+                                        <span>SUBAHLAKSHMI CHANDRA</span>
+                                        <span>12/24</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="cards row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="card" onclick="selectCard(event)">
+                <div class="sm-visible mobile">
+                    <div class="select-card-title sbi-text gray">
+                        <span>Please select a card to continue</span>
+                    </div>
+                    <div class="tkn-cards card-carousel-screen-1">
+                        <div class="tkn-card card-1" onclick="selectCard(event, 'cards-list')">
                             <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
                             <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
                             <!-- <div class="card-content full-width"> -->
@@ -58,10 +144,7 @@
                             </div>
                             <!-- </div> -->
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class=" card" onclick="selectCard(event)">
-                            <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                        <div class=" tkn-card card-2" onclick="selectCard(event, 'cards-list')">
                             <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
                             <div class="card-content full-width">
                                 <div class="card-selector">
@@ -83,10 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class=" card" onclick="selectCard(event)">
-                            <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                        <div class=" tkn-card card-3" onclick="selectCard(event, 'cards-list')">
                             <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
                             <div class="card-content full-width">
                                 <div class="card-selector">
@@ -111,86 +191,199 @@
                     </div>
                 </div>
             </section>
+
             <section class="tkn-after-card-selection hidden" id="card-limits">
                 <div class="sbi-wrapper">
-                    <div class="tkn-card-selection-container">
-                        <div class="card-selection-dropdown"></div>
-                        <div class="my-limits">
-                            <div class="title-bar">
-                                <span>My Limits</span>
-                                <img src="./assets/images/my_limits_header.png" />
+                    <div class="tkn-cards card-carousel-screen-2 sm-visible mobile">
+                        <div class="tkn-card card-1" onclick="selectCard(event, 'card-limits')">
+                            <!-- <div style="position: relative;width: 100%" onclick="goToScreen('manage-limits')"> -->
+                            <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                            <!-- <div class="card-content full-width"> -->
+                            <div class="card-selector">
+                                <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
+                            </div>
+                            <div class="card-number flex flex-sb">
+                                <div>8810</div>
+                                <div>6327</div>
+                                <div>9900</div>
+                                <div>6754</div>
+                            </div>
+                            <div class="card-details-headings flex flex-sb">
+                                <span>CARD HOLDER</span>
+                                <span>VALID THRU</span>
+                            </div>
+                            <div class="card-details sbi-text flex flex-sb">
+                                <span>SUBAHLAKSHMI CHANDRA</span>
+                                <span>12/24</span>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                        <div class="tkn-card card-2" onclick="selectCard(event, 'card-limits')">
+                            <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                            <div class="card-content full-width">
+                                <div class="card-selector">
+                                    <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
+                                </div>
+                                <div class="card-number flex flex-sb">
+                                    <div>8810</div>
+                                    <div>6327</div>
+                                    <div>9900</div>
+                                    <div>6754</div>
+                                </div>
+                                <div class="card-details-headings flex flex-sb">
+                                    <span>CARD HOLDER</span>
+                                    <span>VALID THRU</span>
+                                </div>
+                                <div class="card-details sbi-text flex flex-sb">
+                                    <span>SUBAHLAKSHMI CHANDRA</span>
+                                    <span>12/24</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="limit-content">
-                            <div class="section">
-                                <div class="sbi-text">
-                                    <span>Your international spend limit is currently set at</span>
+                        <div class="tkn-card card-3" onclick="selectCard(event, 'card-limits')">
+                            <img class="card-image" src="./assets/images/card_background_2x.png" alt="" />
+                            <div class="card-content full-width">
+                                <div class="card-selector">
+                                    <img class="card-radio-image" src="./assets/images/card-select.png" alt="" />
                                 </div>
-                                <div class="amount space-top-10">
-                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
-                                    <span>1,75,000</span>
+                                <div class="card-number flex flex-sb">
+                                    <div>8810</div>
+                                    <div>6327</div>
+                                    <div>9900</div>
+                                    <div>6754</div>
                                 </div>
-                                <div class="space-top-10 sbi-text">
-                                    <span class="">Utilized this month: </span>
-                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
-                                    <span class="utilization">50,000</span>
+                                <div class="card-details-headings flex flex-sb">
+                                    <span>CARD HOLDER</span>
+                                    <span>VALID THRU</span>
                                 </div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="section">
-                                <div class="sbi-text">
-                                    <span>Your online limit is currently set at</span>
-                                </div>
-                                <div class="amount space-top-10">
-                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
-                                    <span>2,000</span>
-                                </div>
-                                <div class="space-top-10 sbi-text">
-                                    <span class="">Utilized this month: </span>
-                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
-                                    <span class="utilization">50,000</span>
+                                <div class="card-details sbi-text flex flex-sb">
+                                    <span>SUBAHLAKSHMI CHANDRA</span>
+                                    <span>12/24</span>
                                 </div>
                             </div>
-                            <div class="divider"></div>
-                            <div class="section">
-                                <div class="sbi-text">
-                                    <span>Per transaction limits for contactless spends are set at</span>
+                        </div>
+                    </div>
+                    <div class="dummy-div" onclick="scrollDown()"></div>
+                    <div class="tkn-scrollable-div">
+                        <div class="card-number-message sbi-subheading sm-visible">
+                            <span>Viewing your card ending in 6754</span>
+                        </div>
+                        <div class="tkn-card-selection-container">
+                            <div class="tkn-card-selection-dropdown sbi-text sm-hidden desktop">
+                                <div class="selected-option" onclick="showSelectMenu()">
+                                    <span id="selectedValue">xxxx-xxxx-xxxx-1234</span>
+                                    <img src="./assets/images/chevron.png" />
                                 </div>
-                                <div class="flex space-top-10 pin-based sbi-text">
-                                    <div class=" left border">
-                                        <div>
-                                            <span>Non PIN Based Spends</span>
+                                <div class="all-options hidden">
+                                    <div class="option" onclick="selectCardOption(event)">
+                                        <img class="hidden" src="./assets/images/tick-mark.png" />
+                                        <span class="value">xxxx-xxxx-xxxx-1234</span>
+                                    </div>
+                                    <div class="option" onclick="selectCardOption(event)">
+                                        <img class="hidden" src="./assets/images/tick-mark.png" />
+                                        <span class="value">xxxx-xxxx-xxxx-2345</span>
+                                    </div>
+                                    <div class="option" onclick="selectCardOption(event)">
+                                        <img class="hidden" src="./assets/images/tick-mark.png" />
+                                        <span class="value">xxxx-xxxx-xxxx-3456</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="my-limits-banner">
+                                <div class="my-limits  sm-hidden desktop">
+                                    <div class="title-bar">
+                                        <span>My Limits</span>
+                                        <img src="./assets/images/my_limits_header.png" />
+                                    </div>
+                                </div>
+                                <div class="my-limits sm-visible mobile">
+                                    <div class="title-bar">
+                                        <span>My Limits</span>
+                                        <img src="./assets/images/changes_successful.png" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="limit-content ">
+                                <div class="content">
+                                    <div class="section">
+                                        <div class="sbi-text">
+                                            <span>Your international spend limit is currently set at</span>
+                                        </div>
+                                        <div class="amount space-top-10">
+                                            <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                            <span>1,75,000</span>
+                                        </div>
+                                        <div class="space-top-10 sbi-text">
+                                            <span class="">Utilized this month: </span>
+                                            <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                            <span class="utilization">50,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="section">
+                                        <div class="sbi-text">
+                                            <span>Your online limit is currently set at</span>
                                         </div>
                                         <div class="amount space-top-10">
                                             <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
                                             <span>2,000</span>
                                         </div>
-                                    </div>
-                                    <div class="right">
-                                        <div>
-                                            <span>PIN Based Spends</span>
-                                        </div>
-                                        <div class="amount space-top-10">
+                                        <div class="space-top-10 sbi-text">
+                                            <span class="">Utilized this month: </span>
                                             <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
-                                            <span>2,000</span>
+                                            <span class="utilization">50,000</span>
                                         </div>
                                     </div>
+                                    <div class="divider"></div>
+                                    <div class="section">
+                                        <div class="sbi-text">
+                                            <span>Per transaction limits for contactless spends are set at</span>
+                                        </div>
+                                        <div class="flex space-top-10 pin-based sbi-text">
+                                            <div class=" left border">
+                                                <div>
+                                                    <span>Non PIN Based Spends</span>
+                                                </div>
+                                                <div class="amount space-top-10">
+                                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                                    <span>2,000</span>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>PIN Based Spends</span>
+                                                </div>
+                                                <div class="amount space-top-10">
+                                                    <img class="rupee" src="./assets/images/rupee_symbol.png" alt="" />
+                                                    <span>2,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="space-top-40 sbi-button primary manage-limits-button"
+                                            onclick="goToScreen('manage-limits')">Manage my limits</button>
+                                    </div>
+                                    <div class="subtext sbi-text space-top-10 sm-visible">
+                                            <span>Set individual limits for your Card transactions (ATM and Online) and Contactless
+                                                transactions (PIN and Non-PIN based)</span>
+                                        </div>
                                 </div>
-                                <button class="space-top-40 sbi-button primary"
-                                    onclick="goToScreen('manage-limits')">Manage my limits</button>
                             </div>
+
                         </div>
-                        <div class="subtext sbi-text space-top-10">
+                    </div>
+                    <div class="sm-hidden subtext-section desktop">
+                        <div class="subtext sbi-text space-top-10 ">
                             <span>Set individual limits for your Card transactions (ATM and Online) and Contactless
                                 transactions (PIN and Non-PIN based)</span>
                         </div>
                     </div>
+                    
                 </div>
             </section>
         </div>
 
-        <div id="manage-limits-screen" class="tkn-manage-limits-screen ">
-            <div class="sm-hidden desktop">
+        <div id="manage-limits-screen" class="tkn-manage-limits-screen hidden">
+            <div class="">
                 <header class="tkn-manage-limits-header flex flex-as">
                     <span class="back-button" onclick="goToScreen('cards-screen')">
                         <img src="./assets/images/chevron.png" />
@@ -205,28 +398,31 @@
                     </div>
                 </header>
                 <div class="tkn-spends-section">
-                    <div class="tabs-header sbi-wrapper">
-                        <div class="tabs flex">
-                            <div class="tab active" onclick="switchTab(event, 'card-spends', 'desktop')">
-                                <span>Card Spends</span>
-                            </div>
-                            <div class="tab" onclick="switchTab(event, 'digital-spends', 'desktop')">
-                                <span>Digital Spends</span>
+                    <div class="tabs-header ">
+                        <div class="sbi-wrapper">
+                            <div class="tabs flex">
+                                <div class="tab active" onclick="switchTab(event, 'card-spends')">
+                                    <span>Card Spends</span>
+                                </div>
+                                <div class="tab" onclick="switchTab(event, 'digital-spends')">
+                                    <span>Digital Spends</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tabs-body">
                         <div class="sbi-wrapper">
                             <div class="content-wrapper">
-                                <div class="tab-content">
-                                    <div id="card-spends" class="content cards active">
+                                <div class="tab-content" id="tab-content-form" >
+                                    <div id="card-spends" class="content tkn-tab-card active">
                                         <section class="all-international sbi-text">
                                             <div class="toggle-section master">
                                                 <div class="flex flex-sb">
                                                     <span class="sbi-subheading">All international transactions</span>
                                                     <label class="switch">
-                                                        <input id="master-international" type="checkbox"
+                                                        <input id="master-international" type="checkbox" checked
                                                             onclick="onChangeCardMaster('all-international')"
+                                                            checked
                                                             onchange="enableApplyButton();changeNonPinCountLimit(event)"
                                                             class="master-toggle">
                                                         <span class="slider round"></span>
@@ -241,8 +437,8 @@
                                             <div class="toggle-section slave atm-international flex flex-sb">
                                                 <span class="">International ATM transactions</span>
                                                 <label class="switch">
-                                                    <input id="atm-international" type="checkbox" class="slave-toggle"
-                                                        onclick="onChangeSlave(event, 'atm-international')"
+                                                    <input id="atm-international" type="checkbox" class="slave-toggle" checked
+                                                        onclick="onChangeSlave(event, 'atm-international', 'all-international')"
                                                         onchange="enableApplyButton()">
                                                     <span class="slider round"></span>
                                                 </label>
@@ -253,9 +449,10 @@
                                                 <div class="flex flex-sb">
                                                     <span class="sbi-subheading">All online transactions</span>
                                                     <label class="switch">
-                                                        <input id="master-online" type="checkbox"
+                                                        <input id="master-online" type="checkbox" checked
                                                             onclick="onChangeCardMaster('all-online')"
-                                                            onchange="enableApplyButton()" class="master-toggle">
+                                                            checked onchange="enableApplyButton()"
+                                                            class="master-toggle">
                                                         <span class="slider round"></span>
                                                     </label>
                                                 </div>
@@ -268,8 +465,8 @@
                                             <div class="toggle-section slave domestic-online flex flex-sb">
                                                 <span class="">Domestic transactions</span>
                                                 <label class="switch">
-                                                    <input id="domestic-online" type="checkbox" class="slave-toggle"
-                                                        onclick="onChangeSlave(event, 'domestic-online')"
+                                                    <input id="domestic-online" type="checkbox" class="slave-toggle" checked
+                                                        onclick="onChangeSlave(event, 'domestic-online', 'all-online')"
                                                         onchange="enableApplyButton()">
                                                     <span class="slider round"></span>
                                                 </label>
@@ -279,23 +476,22 @@
                                                 <span class="">International transactions</span>
                                                 <label class="switch">
                                                     <input id="international-online" type="checkbox"
-                                                        class="slave-toggle"
-                                                        onclick="onChangeSlave(event, 'international-online')"
+                                                        class="slave-toggle" checked
+                                                        onclick="onChangeSlave(event, 'international-online', 'all-online')"
                                                         onchange="enableApplyButton()">
                                                     <span class="slider round"></span>
                                                 </label>
                                             </div>
                                         </section>
-                                        <div class="sbi-button-group vertical-sm space-top-40">
+                                       <!--  <div class="sbi-button-group vertical-sm space-top-40">
                                             <button class="apply-digital sbi-button primary"
                                                 onclick="goToScreen('applied-changes-screen')" disabled="disabled">Apply
                                                 Changes</button>
-                                            <a class="sbi-link underlined"
+                                            <a class="sbi-link underlined cancel-changes"
                                                 onclick="openExitWithoutSaveModal()">Cancel</a>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <form id="digital-spends" class="content digital"
-                                        onsubmit="goToScreen('applied-changes-screen')">
+                                    <div id="digital-spends" class="content tkn-tab-digital">
                                         <section class="all-digital">
                                             <div class="toggle-section">
                                                 <div class="flex "><span class="sbi-subheading">All Digital
@@ -314,7 +510,8 @@
                                                     <label class="switch">
                                                         <input id="master-non-pin" type="checkbox"
                                                             onclick="onChangeDigitalMaster('non-pin')"
-                                                            onchange="enableApplyButton()" class="master-toggle">
+                                                            checked onchange="enableApplyButton()"
+                                                            class="master-toggle">
                                                         <span class="slider round"></span>
                                                     </label>
                                                 </div>
@@ -343,7 +540,7 @@
                                                             alt="" />
                                                         <div class="value">
                                                             <input value="2,50,000" type="text" id="new-limit-1"
-                                                                onchange="enableApplyButton()"
+                                                                onchange="enableApplyButton()" required
                                                                 onkeypress="return isNumber(event)" />
                                                         </div>
                                                     </div>
@@ -372,7 +569,7 @@
                                                     <div class="limit flex flex-ac">
                                                         <div class="value">
                                                             <input value="3" type="text" onchange="enableApplyButton()"
-                                                                pattern="([0-9]|10)" required />
+                                                                pattern="([0-9]|10)" onkeypress="return isNumber(event)" required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,7 +587,7 @@
                                                     <span class="">PIN based Contactless Transactions</span>
                                                     <label class="switch">
                                                         <input id="master-pin" type="checkbox"
-                                                            onclick="onChangeDigitalMaster('pin')"
+                                                            onclick="onChangeDigitalMaster('pin')" checked
                                                             onchange="enableApplyButton()" class="master-toggle">
                                                         <span class="slider round"></span>
                                                     </label>
@@ -420,7 +617,7 @@
                                                             alt="" />
                                                         <div class="value">
                                                             <input value="2,50,000" type="text" id="new-limit-2"
-                                                                onchange="enableApplyButton()"
+                                                                onchange="enableApplyButton()" required
                                                                 onkeypress="return isNumber(event)" />
                                                         </div>
                                                     </div>
@@ -449,19 +646,22 @@
                                                     <div class="limit flex flex-ac">
                                                         <div class="value">
                                                             <input value=99 type="text" onchange="enableApplyButton()"
-                                                                pattern="([1-9]|[1-8][0-9]|9[0-9])" />
+                                                                pattern="([1-9]|[1-8][0-9]|9[0-9])" onkeypress="return isNumber(event)"
+                                                                required />
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </section>
-                                        <div class="sbi-button-group vertical-sm space-top-40">
-                                            <button disabled class="apply-digital sbi-button primary">Apply
-                                                Changes</button>
-                                            <a class="sbi-link underlined"
+                                        
+                                    </div>
+                                    <div class="sbi-button-group vertical-sm space-top-40">
+                                            <button disabled class="apply-digital sbi-button primary" onclick="goToScreen('applied-changes-screen')" >
+                                                Apply Changes
+                                            </button>
+                                            <a class="sbi-link underlined cancel-changes"
                                                 onclick="openExitWithoutSaveModal()">Cancel</a>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -486,7 +686,7 @@
                                             onclick="goToScreen('applied-changes-screen')">
                                             Apply Changes
                                         </button>
-                                        <a onclick="goToScreen('cards-screen');window.location.hash=''"
+                                        <a onclick="onExitWithoutSave()"
                                             class="underlined">Exit without saving</a>
                                     </div>
                                 </div>
@@ -495,7 +695,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sm-visible mobile">
+            <!-- <div class="sm-visible mobile">
                 <header class="tkn-manage-limits-header flex flex-as">
                     <span class="back-button" onclick="goToScreen('cards-screen')">
                         <img src="./assets/images/chevron.png" />
@@ -524,14 +724,15 @@
                         <div class="">
                             <div class="content-wrapper">
                                 <div class="tab-content">
-                                    <div id="card-spends" class="content cards active">
+                                    <div id="card-spends" class="content tkn-tab-card active">
                                         <section class="all-international sbi-text">
                                             <div class="toggle-section master">
                                                 <div class="flex flex-sb">
                                                     <span class="sbi-subheading">All international transactions</span>
                                                     <label class="switch">
                                                         <input id="master-international" type="checkbox"
-                                                            onclick="onChangeCardMaster('all-international')"
+                                                            onclick="onChangeCardMaster('all-international', 'mobile')"
+                                                            checked
                                                             onchange="enableApplyButton();changeNonPinCountLimit(event)"
                                                             class="master-toggle">
                                                         <span class="slider round"></span>
@@ -547,7 +748,7 @@
                                                 <span class="">International ATM transactions</span>
                                                 <label class="switch">
                                                     <input id="atm-international" type="checkbox" class="slave-toggle"
-                                                        onclick="onChangeSlave(event, 'atm-international')"
+                                                        onclick="onChangeSlave(event, 'atm-international','all-international', 'mobile')"
                                                         onchange="enableApplyButton()">
                                                     <span class="slider round"></span>
                                                 </label>
@@ -558,8 +759,8 @@
                                                 <div class="flex flex-sb">
                                                     <span class="sbi-subheading">All online transactions</span>
                                                     <label class="switch">
-                                                        <input id="master-online" type="checkbox"
-                                                            onclick="onChangeCardMaster('all-online')"
+                                                        <input id="master-online" type="checkbox" checked
+                                                            onclick="onChangeCardMaster('all-online', 'mobile')"
                                                             onchange="enableApplyButton()" class="master-toggle">
                                                         <span class="slider round"></span>
                                                     </label>
@@ -574,7 +775,7 @@
                                                 <span class="">Domestic transactions</span>
                                                 <label class="switch">
                                                     <input id="domestic-online" type="checkbox" class="slave-toggle"
-                                                        onclick="onChangeSlave(event, 'domestic-online')"
+                                                        onclick="onChangeSlave(event, 'domestic-online','all-online', 'mobile')"
                                                         onchange="enableApplyButton()">
                                                     <span class="slider round"></span>
                                                 </label>
@@ -585,7 +786,7 @@
                                                 <label class="switch">
                                                     <input id="international-online" type="checkbox"
                                                         class="slave-toggle"
-                                                        onclick="onChangeSlave(event, 'international-online')"
+                                                        onclick="onChangeSlave(event, 'international-online','all-online', 'mobile')"
                                                         onchange="enableApplyButton()">
                                                     <span class="slider round"></span>
                                                 </label>
@@ -593,13 +794,13 @@
                                         </section>
                                         <div class="sbi-button-group vertical-sm space-top-40">
                                             <button class="apply-digital sbi-button primary"
-                                                onclick="goToScreen('applied-changes-screen')" disabled="disabled">Apply
-                                                Changes</button>
-                                            <a class="sbi-link underlined"
+                                                onclick="goToScreen('applied-changes-screen')" disabled="disabled">
+                                                Apply Changes</button>
+                                            <a class="sbi-link underlined cancel-changes"
                                                 onclick="goToScreen('exit-without-save-screen')">Cancel</a>
                                         </div>
                                     </div>
-                                    <form id="digital-spends" class="content digital"
+                                    <form id="digital-spends" class="content tkn-tab-digital"
                                         onsubmit="goToScreen('applied-changes-screen')">
                                         <section class="all-digital">
                                             <div class="toggle-section">
@@ -618,7 +819,7 @@
                                                     <span class="">Non-PIN based Contactless Transactions</span>
                                                     <label class="switch">
                                                         <input id="master-non-pin" type="checkbox"
-                                                            onclick="onChangeDigitalMaster('non-pin')"
+                                                            onclick="onChangeDigitalMaster('non-pin', 'mobile')" checked
                                                             onchange="enableApplyButton()" class="master-toggle">
                                                         <span class="slider round"></span>
                                                     </label>
@@ -695,7 +896,7 @@
                                                     <span class="">PIN based Contactless Transactions</span>
                                                     <label class="switch">
                                                         <input id="master-pin" type="checkbox"
-                                                            onclick="onChangeDigitalMaster('pin')"
+                                                            onclick="onChangeDigitalMaster('pin', 'mobile')" checked
                                                             onchange="enableApplyButton()" class="master-toggle">
                                                         <span class="slider round"></span>
                                                     </label>
@@ -764,7 +965,8 @@
                                             <button disabled class="apply-digital sbi-button primary">
                                                 Apply Changes
                                             </button>
-                                            <a class="sbi-link underlined" onclick="goToScreen('exit-without-save-screen')">Cancel</a>
+                                            <a class="sbi-link underlined cancel-changes" 
+                                                onclick="goToScreen('exit-without-save-screen')">Cancel</a>
                                         </div>
                                     </form>
                                 </div>
@@ -772,9 +974,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
-        <div id="exit-without-save-screen" class="tkn-exit-without-save-screen hidden">
+        <!-- <div id="exit-without-save-screen" class="tkn-exit-without-save-screen hidden">
             <div class="head-image">
                 <img src="./assets/images/changes_successful.png" style="max-width:100%;width: 274px;" alt="">
             </div>
@@ -782,20 +984,21 @@
                 <div class="content-heading">You have unsaved changes</div>
                 <div class="space-top-40">Are you sure you want to exit without saving?</div>
                 <br>
-                <p>Choose “Apply changes” to update your card details.Choose “Exit without saving” to discard your changes.</p>
+                <p>Choose “Apply changes” to update your card details.Choose “Exit without saving” to discard your
+                    changes.</p>
             </div>
             <div class="sbi-button-group vertical-sm">
                 <button class=" sbi-button primary" onclick="goToScreen('applied-changes-screen-from-exit')">
                     Apply Changes
                 </button>
-                <a onclick="goToScreen('cards-screen')" class="underlined ">Cancel</a>
+                <a onclick="goToScreen('cards-screen-from-exit')" class="underlined ">Cancel</a>
             </div>
-        
-        </div>
+
+        </div> -->
         <div id="applied-changes-screen" class="tkn-changes-applied hidden">
             <header class="sbi-wrapper tkn-card-header flex flex-ac flex-sb">
                 <img src="./assets/images/sbi_card_logo_2x.jpg" alt="" style="height: 21px;" />
-                <a href="#myDashboard" class="" style="line-height: 20px;">My Dashboard</a>
+                <a href="" class="" style="line-height: 20px;">My Dashboard</a>
             </header>
             <section class="tkn-title-bar flex">
                 <div class="img-container">
