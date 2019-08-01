@@ -9,7 +9,7 @@ module.exports = {
     entry:  './src/js/app.js',
     output: {
         path: path.resolve(__dirname,'build'),
-        filename: 'bundle.js',
+        filename: 'bundle.min.js',
         // publicPath: '/build'
     },
     module:{
