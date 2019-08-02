@@ -309,6 +309,7 @@ noUiSlider.create(slider2, {
 /** Linking sliders with input fields */
 const inputField1 = document.getElementById('new-limit-1');
 
+//update input field on slider update
 slider1.noUiSlider.on('update', function (values, handle) {
     const value = values[handle];
     /* if (handle) { // i.e. if handle with index 1 comes up
@@ -318,13 +319,24 @@ slider1.noUiSlider.on('update', function (values, handle) {
     enableApplyButton();
 });
 
+// update slider when user clicks outside the box after entering the value
 inputField1.addEventListener('change', function () {
     /* slider1.noUiSlider.set([null, this.value]); */
     slider1.noUiSlider.set(this.value);
 });
 
+// update the slider after user presses enter key after entering the value
+inputField1.addEventListener('keydown', function (e) {
+
+    if(e.which == 13){
+        slider1.noUiSlider.set(this.value);
+    }
+
+});
+
 const inputField2 = document.getElementById('new-limit-2');
 
+//update input field on slider update
 slider2.noUiSlider.on('update', function (values, handle) {
     const value = values[handle];
     /* if (handle) {
@@ -334,9 +346,17 @@ slider2.noUiSlider.on('update', function (values, handle) {
     enableApplyButton();
 });
 
+// update slider when user clicks outside the box after entering the value
 inputField2.addEventListener('change', function () {
     /* slider2.noUiSlider.set([null, this.value]); */
     slider2.noUiSlider.set(this.value);
+});
+
+// update the slider after user presses enter key after entering the value
+inputField2.addEventListener('keydown', function (e) {
+    if(e.which == 13){
+        slider2.noUiSlider.set(this.value);
+    }
 });
 
 // Disable the pseudo handle
